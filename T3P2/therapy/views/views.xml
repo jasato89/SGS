@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="therapy.therapy_center_list">
+            <field name="name">Therapy Centers</field>
+            <field name="model">therapy.therapy</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="therapy_id"/>
+                    <field name="therapy_center_name"/>
+                    <field name="monthly_users"/>
+                    <field name="price_session"/>
+                    <field name="credit_card"/>
+                    <field name="area"/>
+                    <field name="employees"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="therapy.region_list">
+            <field name="name">Therapy Centers - Area</field>
+            <field name="model">therapy.region</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="area_name"/>
+                    <field name="postcode"/>
+                    <field name="area_code"/>
+                    <field name="therapy_center"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="therapy.
+    region_action_window">
+            <field name="name">Areas</field>
+            <field name="res_model">therapy.area</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="therapy.therapy_action_window">
+            <field name="name">Therapy Centers</field>
+            <field name="res_model">therapy.therapy</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Therapy Centers" id="therapy.menu_root"/>
+
+        <!-- actions -->
+        <menuitem name="Areas" id="therapy.area_menu_1_list" parent="therapy.menu_root"
+                  action="therapy.area_action_window"/>
+        <menuitem name="Therapy" id="therapy.therapy_menu_1_list" parent="therapy.menu_root"
+                  action="therapy.therapy_action_window"/>
+    </data>
+</odoo>

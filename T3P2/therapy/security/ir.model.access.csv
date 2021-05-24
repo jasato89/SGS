@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_therapy_area_all,therapy.area,model_therapy_area,therapy_admin,1,1,1,1
+access_therapy_area_users,therapy.area,model_therapy_area,,1,0,0,

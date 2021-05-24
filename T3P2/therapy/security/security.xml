@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="therapy_admin" model="res.groups">
+            <field name="name">Admin</field>
+        </record>
+        <record id="therapy_usuarios" model="res.groups">
+            <field name="name">User</field>
+        </record>
+    </data>
+</odoo>
