@@ -94,7 +94,20 @@ El log nos permite identificar qué problemas están sucediendo en nuestro servi
 
 ## 12 Si queremos **instalar un módulo que no se encuentra** disponible por defecto, ¿cuáles son los **pasos** que debemos **seguir**? (Instale un módulo y adjunte capturas de pantalla)
 
+En primer lugar nos dirigimos a apps.odoo.com y procedemos a descargarnos un módulo:
+
+![Odoo_apps](Odoo_apps.png)
+
+Al estar corriendo en docker, podríamos tanto tanto acceder vía ssh a nuestro servidor o montar una carpeta compartida entre nuestro ordenador y el contenedor de Odoo. En este caso he optado por este método para comprobar que también funciona, haciendo uso del siguiente comando en Docker:
+
+```shell
+$ docker run -v /jasato/desktop/addons:/mnt/extra-addons -p 8069:8069 --name odoo --link db:db -t odoo
+```
 
 
 
+Añadimos la carpeta resultante a nuestra carpeta compartida y reiniciamos el servicio: ![docker_restart](docker_restart.png)
 
+Finalmente, accedemos en modo desarrollador y actualizamos nuestras aplicaciones:
+
+![update_apps](update_apps.png)
